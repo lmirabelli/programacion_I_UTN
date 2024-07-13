@@ -111,3 +111,5 @@ total_votos = votos_jugador_1 + votos_jugador_2 + votos_jugador_3
 
 print("El promedio de edad de los jugadores es: " + str(promedio_edad))
 print("La cantidad de votos realizados: " + str(total_votos))
+
+print("Link de la app funcionando: https://onlinegdb.com/kLSDH29MJ")
