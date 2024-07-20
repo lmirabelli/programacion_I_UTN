@@ -19,23 +19,27 @@ while marca_lampara < 1 and marca_lampara > 3:
     marca_lampara = int(marca_lampara)
 
 
-match (cantidad_comprada, marca_lampara):
+match cantidad_comprada:
         case 6 | _ if cantidad_comprada > 6:
             porcentaje_descuento = 50
-        case (5, 1):
-            porcentaje_descuento = 40
-        case (5, _):
-            porcentaje_descuento = 30
-        case (4, 1 | 2):
-            porcentaje_descuento = 25
-        case (4, _):
-            porcentaje_descuento = 20
-        case (3, 1):
-            porcentaje_descuento = 15
-        case (3, 2):
-            porcentaje_descuento = 10
-        case (3, _):
-            porcentaje_descuento = 5
+        case 5:
+            if marca_lampara == "ArgentinaLuz":
+                porcentaje_descuento = 40
+            else:
+                porcentaje_descuento = 30
+        case 4:
+            if marca_lampara == "ArgentinaLuz" or marca_lampara == "FelipeLamparas":
+                porcentaje_descuento = 25
+            else:
+                porcentaje_descuento = 20
+        case 3:
+            if marca_lampara == "ArgentinaLuz":
+                porcentaje_descuento = 15
+            elif marca_lampara == "FelipeLamparas":
+                porcentaje_descuento = 10
+            else:
+                porcentaje_descuento = 5
+
 
 total_sin_descuentos = lamparas * cantidad_comprada
 descuento_total = total_sin_descuentos * porcentaje_descuento / 100
