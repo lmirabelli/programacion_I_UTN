@@ -5,12 +5,13 @@
 # Validar que el ingreso del usuario sea correcto. Tendrá intentos indeterminados.
 
 clave = "Python3"
+clave_correcta = 'no'
 
 
-while True:
-    clave_ingresada = input("para ingresar coloque la clave: ")
+while clave_correcta == 'no':
+    clave_ingresada = input(f"para ingresar coloque la clave: ")
     if clave == clave_ingresada:
-        break
+        clave_correcta = 'si'
     else:
         print("*** CONTRASEÑA INCORRECTA ***")
 

@@ -4,13 +4,12 @@
 # Solicitarle al usuario el ingreso de un color primario.
 # Validar que el mismo sea Rojo, Verde o Azul.
 
-while True:
+color = input("Coloque el nombre de un color primario: ")
+
+while color != 'rojo' and color != 'azul' and color != 'verde':
+    print("*** COLOR EQUIVOCADO ***")
     color = input("Coloque el nombre de un color primario: ")
 
-    if color == 'rojo' or color == "azul" or color == "amarillo":
-        break
-    else:
-        print("*** COLOR EQUIVOCADO ***")
 
 
 print(f"Muy bien el color {color} es un primario")
