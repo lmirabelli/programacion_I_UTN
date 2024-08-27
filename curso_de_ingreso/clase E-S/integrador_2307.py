@@ -1,3 +1,7 @@
+
+#LEONARDO MIRABELLI
+#INTEGRADOR 23/07
+
 """
 
 Se realiza un estudio de mercado para determinar cuál será la nueva franquicia 
@@ -13,7 +17,7 @@ Para ello, se realizará una encuesta mediante un sistema de voto electrónico,
 con el propósito de conocer cuáles son los gustos de los encuestados.
 
 Datos a ingresar:
-    Nombre del encuestado
+    Nombre del encuestado|  450
     Edad (no menor a 18)
     Género (Masculino - Femenino - Otro)
     Voto (STARBUCKS, MCDONALDS, ZARA, KFC)
