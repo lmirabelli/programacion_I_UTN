@@ -1,3 +1,7 @@
+# LEONARDO MIRABELLI
+# DIVISION 114
+
+
 sin_vacuna_edad_4_12_problemas = 0
 loros_digestivos = 0
 gatos_digestivos = 0
@@ -13,7 +17,7 @@ total_edad_gatos = 0
 for i in range(20):
     edad =  input("coloque la edad de la mascota: ")
     edad = int(edad)
-    tipo = input("tipo de mascota: gato/perro/loro")
+    tipo = input("tipo de mascota gato/perro/loro: ")
 
     while tipo != "gato" and tipo != "perro" and tipo != 'loro':
         print(f"{tipo} no es una opcion valida")
@@ -26,7 +30,7 @@ for i in range(20):
         peso = input("Coloque el peso de la mascota: ")
         peso = int(peso)
     
-    diagnostico = input("que problema tiene la mascota: problemas digestivos/parasitos/infeccion")
+    diagnostico = input("que problema tiene la mascota problemas digestivos/parasitos/infeccion: ")
 
     while diagnostico != "problemas digestivos" and diagnostico != "parasitos" and diagnostico != "infeccion":
         print("El diagnostico es incorrecto")
@@ -36,7 +40,7 @@ for i in range(20):
 
     while vacuna != "si" and vacuna != "no":
         print(f"{vacuna} no es una respuesta")
-        vacuna = input("vacuna antirrabica? si/no")
+        vacuna = input("vacuna antirrabica? si/no: ")
     
 
     if diagnostico == "infeccion" or diagnostico == "parasitos":
@@ -58,7 +62,7 @@ for i in range(20):
             bandera_mascota_mas_vieja = 1
         elif edad > edad_mascota_mas_vieja:
             edad_mascota_mas_vieja = edad
-        tipo_mascota_mas_vieja = tipo
+            tipo_mascota_mas_vieja = tipo
         mascotas_vacunadas += 1
     else:
         mascotas_no_vacunadas += 1
@@ -80,12 +84,15 @@ print(f"el tipo de mascota más ingresada con problemas digestivos son los {masc
 print(f"un {tipo_mascota_mas_vieja} de {edad_mascota_mas_vieja} años es la mascota más vieja con vacuna antirrábica.")
 
 cantidad_de_mascotas = mascotas_no_vacunadas + mascotas_vacunadas
-porcentaje_sin_vacunas = mascotas_no_vacunadas / cantidad_de_mascotas
-porcentajes_con_vacunas = mascotas_vacunadas / cantidad_de_mascotas
+porcentaje_sin_vacunas = mascotas_no_vacunadas / cantidad_de_mascotas * 100
+porcentajes_con_vacunas = mascotas_vacunadas / cantidad_de_mascotas * 100
 
 print(f"el porcentaje de mascotas vacunadas es de {porcentajes_con_vacunas}% mientras que las no vacunadas es de {porcentaje_sin_vacunas}%")
 
-promedio_edad_gatos = total_edad_gatos / cantidad_gatos
+if cantidad_gatos > 0:
+    promedio_edad_gatos = total_edad_gatos / cantidad_gatos
+else:
+    promedio_edad_gatos = "no se atendio a ningun gato"
 
 print(f"el promedio de edad de los gatos atendidos es de {promedio_edad_gatos}")
 
