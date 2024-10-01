@@ -15,7 +15,7 @@ def verificar_dni(numero_dni):
     
 
 def completar_dni(numero_dni):
-
+    '''Verifica la cantidad de digitos que tiene el DNI si tiene 6 o 7 lo autocompleta con 0 a la izquierda hasta llegar a 8 digitos, sino lo deja como se ingreso'''
     cantidad_digitos = len(numero_dni)
 
     if cantidad_digitos == 6:
@@ -27,10 +27,10 @@ def completar_dni(numero_dni):
 
 dni_ingresado = input("Escriba su numero de DNI: ")
 
+validacion_dni = verificar_dni(dni_ingresado)
 dni = completar_dni(dni_ingresado)
 print(dni)
-
-validacion_dni = verificar_dni(dni)
 print(validacion_dni)
+
 
 
