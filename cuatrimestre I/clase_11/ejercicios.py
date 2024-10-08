@@ -134,3 +134,66 @@ def ordenar_alfabeticamente(lista: list, opcion: int) -> int:
 lista_largo_nombres = ordenar_alfabeticamente(lista_nombres, opcion_5)
 print(f"la lista tuvo {lista_largo_nombres} intercambios")
 print(lista_nombres)
+
+
+
+
+
+
+# 6. Crear una función para ordenar por apellido una matriz que tenga dos columnas (nombre-apellido) de la A-Z o viceversa dependiendo de un parámetro que se le envíe.
+
+
+def ordenar_matrices(lista: list,ordenamiento: int, opcion: int) -> int:
+    '''Ordena la lista ingresada de forma seleccionada segun el parametro ingresado (opcion)'''
+
+    if(opcion == 1):
+        for i in range(len(lista) - 1):
+            for j in range(i+1, len(lista)):
+                if lista[i][ordenamiento] > lista[j][ordenamiento]:
+                    aux = lista[i]
+                    lista[i] = lista[j]
+                    lista[j] = aux
+                    print(f"{lista[i][ordenamiento]} -> {lista[j][ordenamiento]}")
+    elif(opcion == 2):
+        for i in range(len(lista) - 1):
+            for j in range(i+1, len(lista)):
+                if lista[i][ordenamiento] < lista[j][ordenamiento]:
+                    aux = lista[i]
+                    lista[i] = lista[j]
+                    lista[j] = aux
+                    print(f"{lista[i][ordenamiento]} -> {lista[j][ordenamiento]}")
+
+
+lista_jugadores = [["leonardo","mirabelli",8,0,0],["lionel","messi",16,12,8],["andriy","shevchenko",15,8,4],["nicolas","malvacio",12,3,4],["fernando","enrique",14,8,12],["gabriel","batistuta",22,14,3]]
+
+opcion_6 = int(input("(6)Ingrese la opcion 1 para [A-Z] y la opcion 2 [Z-A]: "))
+while opcion_6 != 1 and opcion_6 != 2:
+        print('La opcion ingresada es no valida')
+        opcion_6 = int(input("Ingrese la opcion 1 para [A-Z] y la opcion 2 [Z-A]: "))
+
+ordenar_matrices(lista_jugadores,1,opcion_6)
+
+print(lista_jugadores)
+
+# 7. Crear una función para ordenar por nombre una matriz que tenga dos columnas (nombre-apellido) de la A-Z o viceversa dependiendo de un parámetro que se le envíe.
+
+opcion_7 = int(input("(7)Ingrese la opcion 1 para [A-Z] y la opcion 2 [Z-A]: "))
+while opcion_7 != 1 and opcion_7 != 2:
+        print('La opcion ingresada es no valida')
+        opcion_7 = int(input("Ingrese la opcion 1 para [A-Z] y la opcion 2 [Z-A]: "))
+
+ordenar_matrices(lista_jugadores,0,opcion_7)
+
+print(lista_jugadores)
+
+# 8. Vamos a guardar la información de un jugador de fútbol en una matriz con las siguientes columnas (nombre,apellido, partidos,goles,asistencias) 
+# debemos:
+
+# 1-Mostrar tabla de goleadores
+# 2-Mostrar tabla de asistencias
+# 3-Los 5 jugadores con más partidos.
+# 4-Mostrar top 3 jugadores con más goles 
+# 5-Mostrar top 3 jugadores con menos asistencias
+ordenar_matrices(lista_jugadores,3,2)
+
+print(lista_jugadores)
