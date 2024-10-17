@@ -25,13 +25,13 @@ cantidad_bailarines = 10
 triple_siete = []
 jurado_malo = []
 
-def ordenar_mayor_menor(lista: list) -> bool:
-    '''Acomoda de mayor a menor los puntajes del promedio (columna con index 4)'''
+def ordenar_mayor_menor(lista: list, index) -> bool:
+    '''Acomoda de mayor a menor segun el index pedido (2: jurado 2, 4: promedio )'''
     validacion_lista_acomodada = False
 
     for i in range(len(lista) - 1):
         for j in range(i+1, len(lista)):
-            if lista[i][4] < lista[j][4]:
+            if lista[i][index] < lista[j][index]:
                 aux = lista[i]
                 lista[i] = lista[j]
                 lista[j] = aux
@@ -83,8 +83,10 @@ def mostrar_notas(tabla: list, ocasion: str, posiciones: int):
 
 
 puntuar_bailarines(tabla, cantidad_bailarines)
-mostrar_notas(tabla, "", len(tabla))
-ordenar_mayor_menor(tabla)
+mostrar_notas(tabla, "Tabla Completa", len(tabla))
+ordenar_mayor_menor(tabla,2)
+mostrar_notas(tabla, "Segun Jurado 2", len(tabla))
+ordenar_mayor_menor(tabla,4)
 mostrar_notas(triple_siete, "tuvo un 7 de parte de los 3 jurados", len(triple_siete))
 mostrar_notas(jurado_malo, "fue aplazado por el jurado 3", len(jurado_malo))
 mostrar_notas(tabla, "TOP 3", 3)
